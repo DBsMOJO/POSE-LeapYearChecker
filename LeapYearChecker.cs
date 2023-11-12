@@ -8,6 +8,8 @@
  *--------------------------------------------------------------
 */
 
+using System;
+
 namespace LeapYearChecker
 {
     public class Program
@@ -15,6 +17,31 @@ namespace LeapYearChecker
         public static void Main()
         {
             int givenYear;
+
+            // Enty
+            Console.WriteLine("Leap Year Checker!");
+
+            do
+            {
+                // Input
+                Console.Write("Enter year: ");
+                givenYear = Convert.ToInt32(Console.ReadLine());
+
+                // Process
+                if (givenYear > 0)
+                {
+                    if (givenYear % 4 == 0)
+                    {
+                        Console.WriteLine("Year {0} is a leap year!", givenYear);
+                    }
+                    else
+                        Console.WriteLine("Year {0} is not a leap year.", givenYear);
+                }
+                else if (givenYear < 0)
+                {
+                    Console.WriteLine("Invalid input...");
+                }
+            } while (givenYear != 0);
         }
     }
 }
